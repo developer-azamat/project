@@ -1,0 +1,38 @@
+.container {
+	display: flex;
+}
+
+.left-section {
+	/* Стили для левой части */
+  background-color: white;
+}
+
+.right-section {
+  overflow-y: auto ;
+  .editable-text {
+     min-height: 3em;
+		padding: 5px;
+		border: 1px solid #ccc;
+		white-space: pre-wrap;
+	}
+}
+
+.mobile-message {
+	display: none; /* По умолчанию скрываем сообщение для мобильных устройств */
+}
+
+/* Медиазапрос для экранов шириной меньше 700 пикселей */
+@media screen and (max-width: 700px) {
+	.right-section {
+		display: none; /* Скрываем правую часть на мобильных устройствах */
+	}
+
+	.mobile-message {
+		width: 100%;
+		height: 100vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 16px;
+	}
+}
